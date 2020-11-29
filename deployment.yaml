@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ashapp
+spec:
+  selector:
+    matchLabels:
+      app: ashapp
+  template:
+    metadata:
+      labels:
+        app: ashapp
+    spec:
+      containers:
+      - name: ashapp
+        image: rjshrjndrn/headerecho
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 4000

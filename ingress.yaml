@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ashapp 
+spec:
+  rules:
+  - host: 44674275-c6e8-41bb-9fcf-684c1fe4697e.k8s.civo.com 
+    http:
+      paths:
+      - path: /echohead 
+        backend:
+          serviceName: ashapp-service
+          servicePort: 80
+      - path: /
+        backend:
+          serviceName: tomcat-service 
+          servicePort: 80
